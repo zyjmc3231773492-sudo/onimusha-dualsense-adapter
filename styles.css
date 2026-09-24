@@ -46,4 +46,11 @@
   .game-shot:first-child figcaption strong{font-size:18px}
 }
 
+.hero-trial{display:flex;flex-direction:column;gap:5px;width:fit-content;max-width:100%;margin:22px 0 0;padding:13px 17px;border:1px solid #d4a95e;background:linear-gradient(100deg,#4a2b15,#251a11);box-shadow:0 0 32px rgba(212,169,94,.18)}
+.hero-trial strong{color:#ffdf9e;font-family:Manrope,Arial,sans-serif;font-size:18px;font-weight:800;letter-spacing:.065em}
+.hero-trial span{color:#f3dfc2;font-size:12px;line-height:1.45}
+.hero-trial+.hero-actions{margin-top:20px}
+.trial-callout strong{display:block;color:#ffdf9e;font-family:Manrope,Arial,sans-serif;font-size:19px;line-height:1.3}
+.trial-callout p{font-size:13px;line-height:1.5}
+
 
