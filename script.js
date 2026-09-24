@@ -14,6 +14,29 @@ nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => 
   menuButton?.setAttribute('aria-label', 'Open menu');
 }));
 
+const featuresDialog = document.querySelector('#features-dialog');
+let featuresOpener = null;
+
+document.querySelectorAll('[data-open-features]').forEach(button => {
+  button.addEventListener('click', () => {
+    if (!featuresDialog || featuresDialog.open) return;
+    featuresOpener = button;
+    featuresDialog.showModal();
+    document.body.classList.add('features-modal-open');
+    featuresDialog.querySelector('[data-close-features]')?.focus();
+  });
+});
+
+featuresDialog?.querySelector('[data-close-features]')?.addEventListener('click', () => featuresDialog.close());
+featuresDialog?.addEventListener('click', event => {
+  if (event.target === featuresDialog) featuresDialog.close();
+});
+featuresDialog?.addEventListener('close', () => {
+  document.body.classList.remove('features-modal-open');
+  featuresOpener?.focus();
+  featuresOpener = null;
+});
+
 document.querySelector('#copy-hash')?.addEventListener('click', async event => {
   const button = event.currentTarget;
   const hash = document.querySelector('#checksum')?.textContent?.trim();
